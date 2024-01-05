@@ -20,11 +20,11 @@ class NoteItem extends StatelessWidget {
                 style: TextStyle(fontSize: 26, color: Colors.black),
               ),
               subtitle: Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
+                padding: const EdgeInsets.only(top: 10, bottom: 16),
                 child: Text(
                   'Build your career with ahmed elnemr',
                   style: TextStyle(
-                      fontSize: 20, color: Colors.black.withOpacity(.5)),
+                      fontSize: 18, color: Colors.black.withOpacity(.5)),
                 ),
               ),
               trailing: IconButton(
