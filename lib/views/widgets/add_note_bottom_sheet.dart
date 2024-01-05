@@ -10,13 +10,14 @@ class AddBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 24,
+            height: 32,
           ),
           CustomTextField(
             hintText: 'Title',
           ),
           CustomTextField(
             hintText: 'Content',
+            maxLines: 5,
           ),
         ],
       ),
