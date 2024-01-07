@@ -12,22 +12,23 @@ class AddBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
+          if (state is AddNoteFailure) {
+            print('Failed ${state.errMessage}');
+          }
+
           if (state is AddNoteSuccess) {
             // Add Note Successfully
             Navigator.pop(context);
-          }
-
-          if (state is AddNoteFailure) {
-            print('Failed ${state.errMessage}');
           }
         },
         builder: (context, state) {
           return ModalProgressHUD(
               inAsyncCall: state is AddNoteLoading ? true : false,
-              child: const AddNotesForm());
+              child: const SingleChildScrollView(child: AddNotesForm()));
         },
       ),
     );
