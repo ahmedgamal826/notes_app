@@ -38,6 +38,7 @@ class NoteItem extends StatelessWidget {
                 ),
                 trailing: IconButton(
                     onPressed: () {
+                      note.delete();
                       print('delete successfully');
                     },
                     icon: Icon(
